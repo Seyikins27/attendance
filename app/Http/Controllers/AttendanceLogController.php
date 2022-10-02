@@ -138,7 +138,7 @@ class AttendanceLogController extends Controller
         $attendance=$request->attendance;
         $student_details=Student::where('id',$student_id)->first();
         $picture_stream=$request->picture_stream;
-        $url = 'http://127.0.0.1:5000/face/capture';
+        $url = 'http://127.0.0.1:5000/face/capture'; //this uses python flask framework to do the facial recognition
         $data = [];
         $data['capture_stream'] = $picture_stream;
         $data['file_path'] = str_replace('\\','/',public_path($student_details->facial_data));
